@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+/* ── Light mode (default CSS custom properties) ── */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Category accent colors – light mode */
+  --color-cat-technology: #3B82F6;
+  --color-cat-world: #EF4444;
+  --color-cat-finance: #10B981;
+  --color-cat-science: #8B5CF6;
+  --color-cat-sports: #F59E0B;
+  --color-cat-entertainment: #EC4899;
+  --color-cat-health: #14B8A6;
+  --color-cat-startup: #F97316;
 }
 
+/* ── Dark mode overrides ── */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* Category accent colors – dark mode (higher luminance for legibility) */
+  --color-cat-technology: #60A5FA;
+  --color-cat-world: #F87171;
+  --color-cat-finance: #34D399;
+  --color-cat-science: #A78BFA;
+  --color-cat-sports: #FBBF24;
+  --color-cat-entertainment: #F472B6;
+  --color-cat-health: #2DD4BF;
+  --color-cat-startup: #FB923C;
+}
+
+/* ── Tailwind v4 theme tokens ── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-cat-technology: var(--color-cat-technology);
+  --color-cat-world: var(--color-cat-world);
+  --color-cat-finance: var(--color-cat-finance);
+  --color-cat-science: var(--color-cat-science);
+  --color-cat-sports: var(--color-cat-sports);
+  --color-cat-entertainment: var(--color-cat-entertainment);
+  --color-cat-health: var(--color-cat-health);
+  --color-cat-startup: var(--color-cat-startup);
 }
